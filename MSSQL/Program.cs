@@ -1,7 +1,7 @@
 using System;
 using System.Data.SqlClient;
 
-namespace SQL
+namespace MSSQL
 {
     class Program
     {
